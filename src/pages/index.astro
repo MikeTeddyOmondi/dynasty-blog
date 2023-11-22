@@ -1,0 +1,11 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import HeroSlider from "../components/HeroSlider.astro";
+import BlogCategorySection from "../components/BlogCategorySection.astro";
+---
+
+<BaseLayout title='ZenBlog' description='ZenBlog Homepage'>
+  <HeroSlider />
+  <BlogCategorySection />
+</BaseLayout>

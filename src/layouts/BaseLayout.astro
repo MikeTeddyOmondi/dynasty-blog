@@ -1,0 +1,40 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import HeroSlider from "../components/HeroSlider.astro";
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+
+  <body>
+    <Header />
+
+    <main id='main'>
+      <slot />
+    </main>
+
+    <Footer />
+
+    <a
+      href='#'
+      class='scroll-top d-flex align-items-center justify-content-center'
+      ><i class='bi bi-arrow-up-short'></i>
+    </a>
+
+    <!-- Vendor JS Files -->
+    <script src='/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' is:inline></script>
+    <script src='/assets/vendor/swiper/swiper-bundle.min.js' is:inline></script>
+    <script src='/assets/vendor/glightbox/js/glightbox.min.js' is:inline></script>
+    <script src='/assets/vendor/aos/aos.js' is:inline></script>
+    <script src='/assets/vendor/php-email-form/validate.js' is:inline></script>
+
+    <!-- Template Main JS File -->
+    <script src='/assets/js/main.js' is:inline></script>
+  </body>
+</html>

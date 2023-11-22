@@ -1,0 +1,66 @@
+---
+import type { CollectionEntry } from "astro:content";
+import FormattedDate from "../components/FormattedDate.astro";
+import BlogPostSideBar from "../components/BlogPostSideBar.astro";
+import BlogPostCommentSection from "../components/BlogPostCommentSection.astro";
+import BaseLayout from "./BaseLayout.astro";
+
+type Props = CollectionEntry<"blog">["data"];
+
+const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <section class='single-post-content'>
+    <div class='container'>
+      <div class='row'>
+        <div class='col-md-9 post-content' data-aos='fade-up'>
+          <!-- ======= Single Post Content ======= -->
+          <div class='single-post'>
+            <div class='post-meta'>
+              <span class='date'>Business</span>
+              <span class='mx-1'>&bullet;</span>
+              <FormattedDate date={pubDate} />
+              <span class='mx-1'>&bullet;</span>
+              {
+                updatedDate && (
+                  <>
+                    <span> Last updated on </span>
+                    <FormattedDate date={updatedDate} />
+                  </>
+                )
+              }
+            </div>
+            <h1 class='mb-5'>
+              {title}
+            </h1>
+
+            <figure class='my-4'>
+              {
+                heroImage && (
+                  <img
+                    width=''
+                    height=''
+                    src={heroImage}
+                    alt=''
+                    class='img-fluid'
+                  />
+                )
+              }
+              <figcaption>
+                {title}
+              </figcaption>
+            </figure>
+
+            <slot />
+          </div>
+          <!-- End Single Post Content -->
+
+          <BlogPostCommentSection />
+        </div>
+
+        <BlogPostSideBar />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,20 @@
+{
+  "name": "dynasty-blog",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^1.1.5",
+    "@astrojs/rss": "^3.0.0",
+    "@astrojs/sitemap": "^3.0.3",
+    "@astrojs/svelte": "^4.0.4",
+    "astro": "^3.5.5",
+    "svelte": "^4.2.7"
+  }
+}
