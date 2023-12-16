@@ -89,17 +89,17 @@ import { SITE_TITLE } from "../consts";
   >
     <a href='/' class='logo d-flex align-items-center'>
       <!-- Uncomment the line below if you also wish to use an image logo -->
-      <img src="/assets/img/logo.png" alt="">
-      <h1>ZenBlog</h1>
+      <img src='/assets/img/logo.png' alt='' />
+      <h1>Pure Vibes</h1>
     </a>
 
     <nav id='navbar' class='navbar'>
       <ul>
-        <li><a href='/'>Blog</a></li>
+        <li><a href='/'>Home</a></li>
         <!-- <li><a href='single-post.html'>Single Post</a></li> -->
         <li class='dropdown'>
           <a href='category.html'
-            ><span>Categories</span>
+            ><span>Blog Categories</span>
             <i class='bi bi-chevron-down dropdown-indicator'></i></a
           >
           <ul>
@@ -118,14 +118,25 @@ import { SITE_TITLE } from "../consts";
                 <li><a href='#'>Deep Drop Down 5</a></li>
               </ul>
             </li> -->
-            <li><a href='#'>Culture</a></li>
+            <li><a href='#'>Lifestyle & Health</a></li>
             <li><a href='#'>Fashion</a></li>
-            <li><a href='#'>Politics</a></li>
+            <li><a href='#'>Travel & Food</a></li>
+            <li><a href='#'>Tech</a></li>
           </ul>
         </li>
 
-        <li><a href='/about'>About</a></li>
-        <li><a href='/contact'>Contact</a></li>
+        <li class='dropdown'>
+          <a href='/services'
+            ><span>Work with Us</span>
+            <i class='bi bi-chevron-down dropdown-indicator'></i></a
+          >
+          <ul>
+            <li><a href='/services#brand-strategy'>Brand Strategy & Identity</a></li>
+            <li><a href='/services#digital-marketing'>Digital & Influencer Marketing</a></li>
+            <li><a href='/services#event-planning'>Event Planning & Execution</a></li>
+          </ul>
+        </li>
+        <li><a href='#'>Podcast</a></li>
       </ul>
     </nav><!-- .navbar -->
 

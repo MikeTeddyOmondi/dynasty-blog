@@ -20,7 +20,7 @@ const posts = (await getCollection("blog")).sort(
                   <a
                     href={`/blog/${post.slug}/`}
                     class='img-bg d-flex align-items-end'
-                    style=`background-image: url(${post.data.heroImage});`
+                    style={`background-image: url(${post.data.heroImage});`}
                   >
                     <div class='img-bg-inner'>
                       <h2>{post.data.title}</h2>
