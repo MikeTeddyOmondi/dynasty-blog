@@ -4,6 +4,9 @@ description: 'The World Bank has announced its intention to pursue a loan and in
 pubDate: 'November 21, 2023'
 updatedDate: 'November 21, 2023'
 heroImage: '/blog-placeholder-3.jpg'
+author: 'Brandon Orinn'
+category: 'Business'
+tags: ['featured']
 ---
 
 The World Bank has announced its intention to pursue a loan and investment agreement worth Sh1.8 trillion for Kenya over the next three years. 
