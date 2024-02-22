@@ -25,9 +25,9 @@ const secondColumnPosts = posts.slice(4, 7);
             /></a
           >
           <div class='post-meta'>
-            <span class='date'>Culture</span>
+            <span class='date'>{firstPost.data.category}</span>
             <span class='mx-1'>&bullet;</span>
-            <span>Jul 5th '22</span>
+            <span><FormattedDate date={firstPost.data.pubDate} /></span>
           </div>
           <h2>
             <a href={`/blog/${firstPost.slug}`}>{firstPost.data.title}</a>

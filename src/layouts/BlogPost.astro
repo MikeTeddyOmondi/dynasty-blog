@@ -35,28 +35,30 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
               {title}
             </h1>
 
-            <figure class='my-4'>
-              {
-                heroImage && (
-                  <img
-                    width=''
-                    height=''
-                    src={heroImage}
-                    alt=''
-                    class='img-fluid'
-                  />
-                )
-              }
-              <figcaption>
-                {title}
-              </figcaption>
-            </figure>
+            <center>
+              <figure class='my-4'>
+                  {
+                    heroImage && (
+                      <img
+                        width='75%'
+                        height='100%'
+                        src={heroImage}
+                        alt=''
+                        class='img-fluid'
+                      />
+                    )
+                  }
+                <figcaption>
+                  {title}
+                </figcaption>
+              </figure>
+            </center>
 
             <slot />
           </div>
           <!-- End Single Post Content -->
 
-          <BlogPostCommentSection />
+          <!-- <BlogPostCommentSection /> -->
         </div>
 
         <BlogPostSideBar />

@@ -1,5 +1,12 @@
 ---
+import { getCollection } from "astro:content";
+import FormattedDate from "./FormattedDate.astro";
+
 const today = new Date();
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
 ---
 
 <!-- ======= Footer ======= -->
@@ -82,77 +89,31 @@ const today = new Date();
           <h3 class='footer-heading'>Recent Posts</h3>
 
           <ul class='footer-links footer-blog-entry list-unstyled'>
-            <li>
-              <a href='single-post.html' class='d-flex align-items-center'>
-                <img
-                  src='/assets/img/post-sq-1.jpg'
-                  alt=''
-                  class='img-fluid me-3'
-                />
-                <div>
-                  <div class='post-meta d-block'>
-                    <span class='date'>Travel & Food</span>
-                    <span class='mx-1'>&bullet;</span>
-                    <span>Jul 5th '23</span>
-                  </div>
-                  <span>Travelling with Friends?</span>
-                </div>
-              </a>
-            </li>
-
-            <li>
-              <a href='single-post.html' class='d-flex align-items-center'>
-                <img
-                  src='/assets/img/post-sq-2.jpg'
-                  alt=''
-                  class='img-fluid me-3'
-                />
-                <div>
-                  <div class='post-meta d-block'>
-                    <span class='date'>Tech</span>
-                    <span class='mx-1'>&bullet;</span>
-                    <span>Jan 5th '24</span>
-                  </div>
-                  <span>What is ChatGPT?</span>
-                </div>
-              </a>
-            </li>
-
-            <li>
-              <a href='single-post.html' class='d-flex align-items-center'>
-                <img
-                  src='/assets/img/post-sq-3.jpg'
-                  alt=''
-                  class='img-fluid me-3'
-                />
-                <div>
-                  <div class='post-meta d-block'>
-                    <span class='date'>Fashion</span>
-                    <span class='mx-1'>&bullet;</span>
-                    <span>Feb 5th '24</span>
-                  </div>
-                  <span>Make your fashion statement with this...</span>
-                </div>
-              </a>
-            </li>
-
-            <li>
-              <a href='single-post.html' class='d-flex align-items-center'>
-                <img
-                  src='/assets/img/post-sq-4.jpg'
-                  alt=''
-                  class='img-fluid me-3'
-                />
-                <div>
-                  <div class='post-meta d-block'>
-                    <span class='date'>Lifestyle & Health</span>
-                    <span class='mx-1'>&bullet;</span>
-                    <span>Mar 4th '24</span>
-                  </div>
-                  <span>How to avoid junk by any means?</span>
-                </div>
-              </a>
-            </li>
+            {
+              posts.slice(0,4).map((post) => (
+                <li>
+                  <a href={`/blog/${post.slug}`} class='d-flex align-items-center'>
+                    <img
+                      src={post.data.heroImage}
+                      width=""
+                      height=""
+                      alt={post.data.title}
+                      class='img-fluid me-3'
+                    />
+                    <div>
+                      <div class='post-meta d-block'>
+                        <span class='date'>{post.data.category}</span>
+                        <span class='mx-1'>&bullet;</span>
+                        <span>
+                          <FormattedDate date={post.data.pubDate} /> 
+                        </span>
+                      </div>
+                      <span>{post.data.title}</span>
+                    </div>
+                  </a>
+                </li>
+              ))
+            }
           </ul>
         </div>
       </div>
@@ -180,11 +141,11 @@ const today = new Date();
 
         <div class='col-md-6'>
           <div class='social-links mb-3 mb-lg-0 text-center text-md-end'>
-            <a href='#' class='twitter'><i class='bi bi-twitter'></i></a>
-            <a href='#' class='facebook'><i class='bi bi-facebook'></i></a>
-            <a href='#' class='instagram'><i class='bi bi-instagram'></i></a>
-            <a href='#' class='google-plus'><i class='bi bi-skype'></i></a>
-            <a href='#' class='linkedin'><i class='bi bi-linkedin'></i></a>
+            <!-- <a href='#' class='twitter'><i class='bi bi-twitter'></i></a> -->
+            <a href='https://web.facebook.com/purevibes.co' class='facebook'><i class='bi bi-facebook'></i></a>
+            <a href='https://www.instagram.com/purevibescompany' class='instagram'><i class='bi bi-instagram'></i></a>
+            <!-- <a href='#' class='google-plus'><i class='bi bi-skype'></i></a> -->
+            <!-- <a href='#' class='linkedin'><i class='bi bi-linkedin'></i></a> -->
           </div>
         </div>
       </div>
