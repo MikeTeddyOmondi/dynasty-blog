@@ -1,0 +1,32 @@
+services:
+
+  # mysql:
+  #   image: docker.io/bitnami/mysql:8.4
+  #   volumes:
+  #     - 'mysql_data:/bitnami/mysql'
+  #   environment:
+  #     # ALLOW_EMPTY_PASSWORD is recommended only for development.
+  #     - ALLOW_EMPTY_PASSWORD=yes
+  #     - MYSQL_USER=bn_ghost
+  #     - MYSQL_DATABASE=bitnami_ghost
+  
+  ghost:
+    container_name: ghost-blog
+    image: ghost:5.84.1
+    ports:
+      - '2369:2368'
+    volumes:
+      - './ghost-data:/var/lib/ghost/content'
+    # depends_on:
+    #   - mysql
+    environment:
+      - database__client=mysql
+      - database__connection__host=mariadb.rancko.labs
+      - database__connection__password=password
+      - database__connection__database=dynasty_blog
+
+# volumes:
+  # mysql_data:
+  #   driver: local
+  # ghost_data:
+  #   driver: local

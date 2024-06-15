@@ -14,6 +14,7 @@
     "@astrojs/rss": "^3.0.0",
     "@astrojs/sitemap": "^3.0.3",
     "@astrojs/svelte": "^4.0.4",
+    "@tryghost/content-api": "^1.11.21",
     "astro": "^3.5.5",
     "svelte": "^4.2.7"
   }

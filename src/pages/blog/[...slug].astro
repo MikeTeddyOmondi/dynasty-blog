@@ -1,4 +1,34 @@
 ---
+import BlogPost from "../../layouts/BlogPost.astro";
+import { ghostClient } from "../../lib/ghost";
+export async function getStaticPaths() {
+  const posts = await ghostClient.posts
+    .browse({
+      limit: "all",
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+  return posts.map((post) => {
+    return {
+      params: {
+        slug: post.slug,
+      },
+      props: {
+        post: post,
+      },
+    };
+  });
+}
+const { post } = Astro.props;
+---
+
+<BlogPost {...post}>
+  <p>{post.reading_time} min read</p>
+  <Fragment set:html={post.html} />
+</BlogPost>
+
+<!-- ---
 import { type CollectionEntry, getCollection } from 'astro:content';
 import BlogPost from '../../layouts/BlogPost.astro';
 
@@ -17,4 +47,4 @@ const { Content } = await post.render();
 
 <BlogPost {...post.data}>
 	<Content />
-</BlogPost>
+</BlogPost> -->
