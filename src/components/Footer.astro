@@ -19,10 +19,10 @@ const posts = (await getCollection("blog")).sort(
           <p>
             Ready to embark on a journey of creative exploration? Your vision is
             our expertise - together, let's create <b>Pure Vibes</b> . Whether you're
-            seeking to boost your digital presence, redefine your brand or plan
-            a memorable event – we've got you covered. Let's craft your brand's
-            story together. Contact us today and discover the power of
-            <b>Pure Vibes</b>  – where creativity knows no bounds!
+            seeking to boost your digital presence, redefine your brand or plan a
+            memorable event – we've got you covered. Let's craft your brand's story
+            together. Contact us today and discover the power of
+            <b>Pure Vibes</b> – where creativity knows no bounds!
           </p>
           <p>
             <a href='/contact' class='footer-link-more'>Book Us</a>
@@ -64,22 +64,28 @@ const posts = (await getCollection("blog")).sort(
           <h3 class='footer-heading'>Categories</h3>
           <ul class='footer-links list-unstyled'>
             <li>
-              <a href='category.html'
+              <a href='/category/business'
+                ><i class='bi bi-chevron-right'></i>Business</a
+              >
+            </li>
+            <li>
+              <a href='/category/lifestyle'
                 ><i class='bi bi-chevron-right'></i>Lifestyle & Health</a
               >
             </li>
             <li>
-              <a href='category.html'
+              <a href='/category/fashion'
                 ><i class='bi bi-chevron-right'></i>Fashion</a
               >
             </li>
             <li>
-              <a href='category.html'
+              <a href='/category/travel'
                 ><i class='bi bi-chevron-right'></i>Travel & Food</a
               >
             </li>
             <li>
-              <a href='category.html'><i class='bi bi-chevron-right'></i>Tech</a
+              <a href='/category/tech'
+                ><i class='bi bi-chevron-right'></i>Tech</a
               >
             </li>
           </ul>
@@ -90,13 +96,16 @@ const posts = (await getCollection("blog")).sort(
 
           <ul class='footer-links footer-blog-entry list-unstyled'>
             {
-              posts.slice(0,4).map((post) => (
+              posts.slice(0, 4).map((post) => (
                 <li>
-                  <a href={`/blog/${post.slug}`} class='d-flex align-items-center'>
+                  <a
+                    href={`/blog/${post.slug}`}
+                    class='d-flex align-items-center'
+                  >
                     <img
                       src={post.data.heroImage}
-                      width=""
-                      height=""
+                      width=''
+                      height=''
                       alt={post.data.title}
                       class='img-fluid me-3'
                     />
@@ -105,7 +114,7 @@ const posts = (await getCollection("blog")).sort(
                         <span class='date'>{post.data.category}</span>
                         <span class='mx-1'>&bullet;</span>
                         <span>
-                          <FormattedDate date={post.data.pubDate} /> 
+                          <FormattedDate date={post.data.pubDate} />
                         </span>
                       </div>
                       <span>{post.data.title}</span>
@@ -135,15 +144,20 @@ const posts = (await getCollection("blog")).sort(
             <!-- Licensing information: https://bootstrapmade.com/license/ -->
             <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/herobiz-bootstrap-business-template/ -->
 
-             Designed by <a href='https://bootstrapmade.com/'>BootstrapMade</a>
+            Designed by <a href='https://bootstrapmade.com/'>BootstrapMade</a>
           </div>
         </div>
 
         <div class='col-md-6'>
           <div class='social-links mb-3 mb-lg-0 text-center text-md-end'>
             <!-- <a href='#' class='twitter'><i class='bi bi-twitter'></i></a> -->
-            <a href='https://web.facebook.com/purevibes.co' class='facebook'><i class='bi bi-facebook'></i></a>
-            <a href='https://www.instagram.com/purevibescompany' class='instagram'><i class='bi bi-instagram'></i></a>
+            <a href='https://web.facebook.com/purevibes.co' class='facebook'
+              ><i class='bi bi-facebook'></i></a
+            >
+            <a
+              href='https://www.instagram.com/purevibescompany'
+              class='instagram'><i class='bi bi-instagram'></i></a
+            >
             <!-- <a href='#' class='google-plus'><i class='bi bi-skype'></i></a> -->
             <!-- <a href='#' class='linkedin'><i class='bi bi-linkedin'></i></a> -->
           </div>
