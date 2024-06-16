@@ -38,7 +38,11 @@ const secondColumnPosts = posts.slice(4, 7);
 
           <div class='d-flex align-items-center author'>
             <div class='photo'>
-              <img src='assets/img/person-1.jpg' alt='' class='img-fluid' />
+              <img
+                src='/image-placeholder.jpg'
+                alt={firstPost.data.author}
+                class='img-fluid'
+              />
             </div>
             <div class='name'>
               <h3 class='m-0 p-0'>{firstPost.data.author}</h3>
@@ -101,7 +105,7 @@ const secondColumnPosts = posts.slice(4, 7);
           </div>
 
           <!-- Trending Section -->
-          <div class='col-lg-4'>
+          <!-- <div class='col-lg-4'>
             <div class='trending'>
               <h3>Trending</h3>
               <ul class='trending-post'>
@@ -152,7 +156,7 @@ const secondColumnPosts = posts.slice(4, 7);
                 </li>
               </ul>
             </div>
-          </div>
+          </div> -->
           <!-- End Trending Section -->
         </div>
       </div>

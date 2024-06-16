@@ -1,6 +1,8 @@
 ---
+import { ViewTransitions } from "astro:transitions";
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
+import GAnalytics from "../components/GAnalytics.svelte";
 import Header from "../components/Header.astro";
 import HeroSlider from "../components/HeroSlider.astro";
 const { title, description } = Astro.props;
@@ -10,15 +12,8 @@ const { title, description } = Astro.props;
 <html lang='en'>
   <head>
     <BaseHead title={title} description={description} />
-    <!-- Google Analytics -->
-    <script async src='https://www.googletagmanager.com/gtag/js?id=G-J94ZCK90BJ'
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {dataLayer.push(arguments)}
-      gtag("js", new Date());
-      gtag("config", "G-J94ZCK90BJ");
-    </script>
+    <GAnalytics client:load />
+    <ViewTransitions />
   </head>
 
   <body>
@@ -43,15 +38,15 @@ const { title, description } = Astro.props;
     <script src='/assets/vendor/glightbox/js/glightbox.min.js' is:inline
     ></script>
     <script src='/assets/vendor/aos/aos.js' is:inline></script>
-    <script src='/assets/vendor/php-email-form/validate.js' is:inline></script>
+    <!-- <script src='/assets/vendor/php-email-form/validate.js' is:inline></script> -->
 
     <!-- Template Main JS File -->
     <script src='/assets/js/main.js' is:inline></script>
 
     <!-- Google AdSense -->
-    <script 
-      async 
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7343483221822635"
-      crossorigin="anonymous"></script>
+    <script
+      async
+      src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7343483221822635'
+      crossorigin='anonymous'></script>
   </body>
 </html>

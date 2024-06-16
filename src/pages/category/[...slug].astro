@@ -1,0 +1,25 @@
+---
+import { getCollection } from "astro:content";
+import Category from "../../components/Category.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  const categories = [
+    "business",
+    "lifestyle",
+    "fashion",
+    "travel",
+    "tech",
+  ];
+  return categories.map((category) => ({
+    params: { slug: category },
+    props: { category },
+  }));
+}
+
+const { category } = Astro.props;
+---
+
+<BaseLayout title='Category' description='Category Page'>
+  <Category {category} />
+</BaseLayout>
