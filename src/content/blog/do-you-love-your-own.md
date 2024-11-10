@@ -20,6 +20,7 @@ Whenever you feel the grip loosening, remember the strength comes from the Lord,
 Thank you so much for the read, see you on the next one!
 
 Connect with me on social media: 
+
 - [Instagram](https://www.instagram.com/purevibescompany)  
 
 - [Facebook](https://web.facebook.com/purevibes.co)
